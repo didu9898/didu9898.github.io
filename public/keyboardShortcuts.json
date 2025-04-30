@@ -1,0 +1,17 @@
+{
+    "actions": [
+        {
+            "id": "showTPWorkbook",
+            "type": "ExecuteFunction",
+            "name": "Open taskpane in excel"
+        }
+    ],
+    "shortcuts": [
+        {
+            "action": "showTPWorkbook",
+            "key": {
+                "default": "Ctrl+Alt+E"
+            }
+        }
+    ]
+}

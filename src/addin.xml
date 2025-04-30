@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+	<Id>E1B314AC-6A93-49A0-8EC6-86785CDE55D1</Id>
+	<Version>1.0.0.0</Version>
+	<ProviderName>Your Company</ProviderName>
+	<DefaultLocale>en-US</DefaultLocale>
+	<DisplayName DefaultValue="Your Add-in Name"/>
+	<Description DefaultValue="Your Add-in Description"/>
+	<IconUrl DefaultValue="https://didu9898.github.io/public/logo512.png" />
+	<SupportUrl DefaultValue="https://www.google.com/" />
+	<Hosts>
+		<Host Name="Workbook"/>
+	</Hosts>
+	<Requirements>
+		<Sets DefaultMinVersion="1.1">
+			<Set Name="SharedRuntime" MinVersion="1.1"/>
+		</Sets>
+	</Requirements>
+	<DefaultSettings>
+		<SourceLocation DefaultValue="https://didu9898.github.io/"/>
+	</DefaultSettings>
+	<Permissions>ReadWriteDocument</Permissions>
+	<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+		<Hosts>
+			<Host xsi:type="Workbook">
+				<Runtimes>
+					<Runtime resid="Taskpane.Url" lifetime="long"/>
+				</Runtimes>
+				<DesktopFormFactor>
+					<GetStarted>
+						<Title resid="GetStarted.Title"/>
+						<Description resid="GetStarted.Description"/>
+						<LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+					</GetStarted>
+					<FunctionFile resid="Taskpane.Url"/>
+					<ExtensionPoint xsi:type="PrimaryCommandSurface">
+						<CustomTab id="Tab">
+							<Group id="Group1">
+								<Label resid="TaskpaneButton.Label"/>
+								<Icon>
+									<bt:Image size="16" resid="blue-icon-16" />
+									<bt:Image size="32" resid="blue-icon-32" />
+									<bt:Image size="80" resid="blue-icon-80" />
+								</Icon>
+								<Control xsi:type="Button" id="TaskpaneButton">
+									<Label resid="TaskpaneButton.Label"/>
+									<Supertip>
+										<Title resid="TaskpaneButton.Label"/>
+										<Description resid="TaskpaneButton.Label"/>
+									</Supertip>
+									<Icon>
+										<bt:Image size="16" resid="blue-icon-16" />
+										<bt:Image size="32" resid="blue-icon-32" />
+										<bt:Image size="80" resid="blue-icon-80" />
+									</Icon>
+									<Action xsi:type="ExecuteFunction">
+										<FunctionName>showTPWorkbook</FunctionName>
+									</Action>
+									<Enabled>true</Enabled>
+								</Control>
+							</Group>
+							<Label resid="TaskpaneButton.Label"/>
+						</CustomTab>
+					</ExtensionPoint>
+				</DesktopFormFactor>
+			</Host>
+			<Host xsi:type="Document">
+				<DesktopFormFactor>
+					<GetStarted>
+						<Title resid="GetStarted.Title"/>
+						<Description resid="GetStarted.Description"/>
+						<LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+					</GetStarted>
+					<FunctionFile resid="Taskpane.Url"/>
+					<ExtensionPoint xsi:type="PrimaryCommandSurface">
+						<OfficeTab id="TabHome">
+							<Group id="Group1">
+							<Label resid="TaskpaneButton.Label"/>
+							<Icon>
+								<bt:Image size="16" resid="blue-icon-16" />
+								<bt:Image size="32" resid="blue-icon-32" />
+								<bt:Image size="80" resid="blue-icon-80" />
+							</Icon>
+							<Control xsi:type="Button" id="TaskpaneButton">
+								<Label resid="TaskpaneButton.Label"/>
+								<Supertip>
+									<Title resid="TaskpaneButton.Label"/>
+									<Description resid="TaskpaneButton.Label"/>
+								</Supertip>
+								<Icon>
+									<bt:Image size="16" resid="blue-icon-16" />
+									<bt:Image size="32" resid="blue-icon-32" />
+									<bt:Image size="80" resid="blue-icon-80" />
+								</Icon>
+								<Action xsi:type="ShowTaskpane">
+									<TaskpaneId>TaskPane01</TaskpaneId>
+									<SourceLocation resid="Taskpane.Url" />
+								</Action>
+								<Enabled>true</Enabled>
+							</Control>
+						</Group>
+					</OfficeTab>
+				  </ExtensionPoint>
+				</DesktopFormFactor>
+			</Host>
+		</Hosts>
+		<Resources>
+			<bt:Images>
+				<bt:Image id="blue-icon-16" DefaultValue="https://didu9898.github.io/public/logo192.png"/>
+				<bt:Image id="blue-icon-32" DefaultValue="https://didu9898.github.io/public/logo192.png"/>
+				<bt:Image id="blue-icon-80" DefaultValue="https://didu9898.github.io/public/logo512.png"/>
+			</bt:Images>
+			<bt:Urls>
+				<bt:Url id="Taskpane.Url" DefaultValue="https://didu9898.github.io/"/>
+				<bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://didu9898.github.io/"/>
+			</bt:Urls>
+			<bt:ShortStrings>
+				<bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+				<bt:String id="GetStarted.Title" DefaultValue="GetStarted Title"/>
+			</bt:ShortStrings>
+			<bt:LongStrings>
+				<bt:String id="GetStarted.Description" DefaultValue="GetStarted Description"/>
+				<bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+			</bt:LongStrings>
+		</Resources>
+	</VersionOverrides>
+	<ExtendedOverrides Url="https://didu9898.github.io/public/keyboardShortcuts.json"/>
+</OfficeApp>
